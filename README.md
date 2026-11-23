@@ -1003,6 +1003,16 @@ The vehicle successfully completed all 10 laps. The controller recorded individu
 
 ---
 
+## 13. Project Demonstration Video
+
+This video demonstrates the F1TENTH autonomous vehicle project,
+including LiDAR-based obstacle avoidance, adaptive speed control,
+and autonomous lap completion.
+
+https://youtu.be/CXdJdL85M5k?si=6kJ22GjpZGtvWXIs
+
+---
+
 ## 10. Conclusion
 
 This project demonstrates an autonomous driving system using ROS 2 and the Follow-the-Gap algorithm.
