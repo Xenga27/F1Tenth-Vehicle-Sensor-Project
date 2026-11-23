@@ -27,11 +27,9 @@ Main features:
 *Figure 1. São Paulo race track used for autonomous driving experiments.*
 
 ---
-# 2. Complete Gap Follow Controller Source Code
+## 2. Complete Gap Follow Controller Source Code
 
 This section provides the complete Python implementation of the Follow-the-Gap controller. Users can copy the source code below, save it as `gap_node.py`, and use it in their ROS 2 workspace.
-
-## 2.1 Complete Python Code – gap_node.py
 
 ```python
 import math
@@ -448,7 +446,7 @@ if __name__ == '__main__':
     main()
 ```
 
-## 2.2 Controller Parameters
+### 2.1 Controller Parameters
 
 The main parameters can be modified directly inside the `__init__()` function of the `ReactiveFollowGap` class.
 
@@ -467,7 +465,7 @@ The main parameters can be modified directly inside the `__init__()` function of
 
 To change the controller behavior, modify the corresponding values, save the file, and rebuild the package.
 
-## 2.3 Software Requirements
+### 2.2 Software Requirements
 
 - Ubuntu Linux
 - ROS 2 Humble
@@ -486,7 +484,7 @@ sudo apt update
 sudo apt install ros-humble-ackermann-msgs ros-humble-sensor-msgs ros-humble-nav-msgs ros-humble-std-msgs python3-numpy
 ```
 
-## 2.4 LiDAR Data Processing
+### 2.3 LiDAR Data Processing
 
 The controller receives LaserScan messages from `/scan`.
 
@@ -512,7 +510,7 @@ ranges = np.convolve(
 )
 ```
 
-## 2.5 Forward Field of View
+### 2.4 Forward Field of View
 
 Only LiDAR measurements within the forward field of view are considered.
 
@@ -529,7 +527,7 @@ roi = np.where(
 
 The configured forward angle is ±0.65 radians.
 
-## 2.6 Emergency Stop
+### 2.5 Emergency Stop
 
 The controller identifies the closest obstacle. If its distance is below 0.25 meters, the vehicle immediately receives a zero-speed command.
 
@@ -542,7 +540,7 @@ if closest_distance < self.emergency_distance:
     return
 ```
 
-## 2.7 Safety Bubble
+### 2.6 Safety Bubble
 
 A safety bubble is created around the closest obstacle. The corresponding LiDAR measurements are removed from the available free space.
 
@@ -568,7 +566,7 @@ end = min(
 front_ranges[start:end] = 0.0
 ```
 
-## 2.8 Finding the Largest Gap
+### 2.7 Finding the Largest Gap
 
 The controller identifies continuous regions of free space and selects the largest gap.
 
@@ -601,7 +599,7 @@ steering = float(front_angles[best_index])
 
 The center of the largest gap becomes the desired steering direction.
 
-## 2.9 Steering Control
+### 2.8 Steering Control
 
 The steering angle is limited to the configured maximum and smoothed to reduce sudden changes.
 
@@ -1003,7 +1001,7 @@ The vehicle successfully completed all 10 laps. The controller recorded individu
 
 ---
 
-## 13. Project Demonstration Video
+### 9.1 Project Demonstration Video
 
 This video demonstrates the F1TENTH autonomous vehicle project,
 including LiDAR-based obstacle avoidance, adaptive speed control,
