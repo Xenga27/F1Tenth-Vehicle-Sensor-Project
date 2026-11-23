@@ -1010,6 +1010,30 @@ and autonomous lap completion.
 https://youtu.be/CXdJdL85M5k?si=6kJ22GjpZGtvWXIs
 
 ---
+### 9.2 ROS Bag Dataset
+
+A 7-minute ROS 2 bag recording of the F1TENTH autonomous vehicle is available for download.
+
+| Property | Value |
+|---|---|
+| File name | `f1tenth_demo_0.db3` |
+| Duration | 419.84 seconds |
+| File size | 552.9 MiB |
+| Total messages | 314,896 |
+| Format | SQLite3 |
+
+#### Recorded Topics
+
+- `/scan` – LiDAR sensor data
+- `/ego_racecar/odom` – Vehicle position and movement
+- `/drive` – Speed and steering commands
+- `/lap_info` – Lap timing information
+
+#### Download
+
+https://drive.google.com/drive/folders/1lTWGxSOB-oAIvL3tMZys2dRzu2KYQGbM?usp=sharing
+
+---
 
 ## 10. Conclusion
 
